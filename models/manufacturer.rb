@@ -26,10 +26,26 @@ class Manufacturer
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE manufacturers
+    SET
+    (
+      name,
+      contact
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@name, @contact, @id]
+    SqlRunner.run( sql, values )
+  end
+
   def self.all()
     sql = "SELECT * FROM manufacturers"
     results = SqlRunner.run( sql )
     return results.map { |manufacturer| Manufacturer.new( manufacturer ) }
   end
+
 
 end
