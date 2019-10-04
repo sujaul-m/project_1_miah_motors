@@ -11,19 +11,25 @@ class Manufacturer
   end
 
   def save()
-  sql = "INSERT INTO manufacturers
-  (
-    name,
-    contact
-  )
-  VALUES
-  (
-    $1, $2
-  )
-  RETURNING id"
-  values = [@name, @contact]
-  results = SqlRunner.run(sql, values)
-  @id = results.first()['id'].to_i
-end
+    sql = "INSERT INTO manufacturers
+    (
+      name,
+      contact
+    )
+    VALUES
+    (
+      $1, $2
+    )
+    RETURNING id"
+    values = [@name, @contact]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM manufacturers"
+    results = SqlRunner.run( sql )
+    return results.map { |manufacturer| Manufacturer.new( manufacturer ) }
+  end
 
 end
