@@ -17,14 +17,15 @@ class Vehicle
     (
       make,
       model,
+      purchase_price,
       selling_price
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@make, @model, @selling_price]
+    values = [@make, @model, @purchase_price, @selling_price]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -35,13 +36,14 @@ class Vehicle
     (
       make,
       model,
+      purchase_price,
       selling_price
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
-    WHERE id = $4"
-    values = [@make, @model, @selling_price, @id]
+    WHERE id = $5"
+    values = [@make, @model, @purchase_price, @selling_price, @id]
     SqlRunner.run( sql, values )
   end
 

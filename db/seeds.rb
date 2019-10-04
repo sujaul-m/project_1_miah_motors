@@ -1,6 +1,6 @@
 require_relative( "../models/manufacturer.rb" )
 require_relative( "../models/vehicle.rb" )
-require_relative( "../models/miah_motor.rb" )
+require_relative( "../models/miah_motors.rb" )
 require("pry-byebug")
 
 MiahMotors.delete_all()
