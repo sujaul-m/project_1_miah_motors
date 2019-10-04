@@ -10,4 +10,20 @@ class Manufacturer
     @contact = options['contact']
   end
 
+  def save()
+  sql = "INSERT INTO manufacturers
+  (
+    name,
+    contact
+  )
+  VALUES
+  (
+    $1, $2
+  )
+  RETURNING id"
+  values = [@name, @contact]
+  results = SqlRunner.run(sql, values)
+  @id = results.first()['id'].to_i
+end
+
 end
