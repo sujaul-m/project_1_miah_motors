@@ -57,5 +57,10 @@ class Vehicle
     return results.map { |vehicle| Vehicle.new( vehicle ) }
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM vehicles;"
+    SqlRunner.run(sql)
+  end
+
 
 end
