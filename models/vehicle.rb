@@ -51,5 +51,11 @@ class Vehicle
     SqlRunner.run( sql, values )
   end
 
+  def self.all()
+    sql = "SELECT * FROM vehicles;"
+    results = SqlRunner.run( sql )
+    return results.map { |vehicle| Vehicle.new( vehicle ) }
+  end
+
 
 end
