@@ -10,5 +10,21 @@ class MiahMotors
     @manufacturer_id = options['manufacturer_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO miah_motors
+    (
+      vehicle_id,
+      manufacturer_id
+    )
+    VALUES
+    (
+      $1, $2
+    )
+    RETURNING id"
+    values = [@vehicle_id, @manufacturer_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
 
 end
