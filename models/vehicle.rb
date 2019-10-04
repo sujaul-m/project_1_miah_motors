@@ -62,5 +62,13 @@ class Vehicle
     SqlRunner.run(sql)
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM vehicles WHERE id = $1;"
+    values = [id]
+    vehicle = SqlRunner.run( sql, values )
+    result = Vehicle.new( vehicle.first )
+    return result
+  end
+
 
 end
