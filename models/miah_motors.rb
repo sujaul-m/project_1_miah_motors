@@ -32,5 +32,13 @@ class MiahMotors
     return results.map { |inventory| MiahMotors.new( inventory ) }
   end
 
+  def vehicle()
+    sql = "SELECT * FROM vehicles
+    WHERE id = $1"
+    values = [@vehicle_id]
+    results = SqlRunner.run( sql, values )
+    return Vehicle.new( results.first )
+  end
+
 
 end
