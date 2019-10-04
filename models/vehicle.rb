@@ -2,12 +2,13 @@ require_relative( '../db/sql_runner' )
 
 class Vehicle
 
-  attr_reader( :make, :model, :selling_price, :id )
+  attr_reader( :make, :model, :purchase_price, :selling_price, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @make = options['make']
     @model = options['model']
+    @purchase_price = options['purchase_price']
     @selling_price = options['selling_price']
   end
 

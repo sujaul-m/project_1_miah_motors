@@ -48,6 +48,18 @@ class MiahMotors
     return Manufacturer.new( results.first )
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM miah_motors"
+    SqlRunner.run( sql )
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM miah_motors
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
 
 
 end
