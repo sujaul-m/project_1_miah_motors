@@ -40,5 +40,14 @@ class MiahMotors
     return Vehicle.new( results.first )
   end
 
+  def manufacturer()
+    sql = "SELECT * FROM manufacturers
+    WHERE id = $1"
+    values = [@manufacturer_id]
+    results = SqlRunner.run( sql, values )
+    return Manufacturer.new( results.first )
+  end
+
+
 
 end
