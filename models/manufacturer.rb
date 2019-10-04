@@ -41,6 +41,13 @@ class Manufacturer
     SqlRunner.run( sql, values )
   end
 
+  def delete()
+    sql = "DELETE FROM manufacturers
+    WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
   def self.all()
     sql = "SELECT * FROM manufacturers;"
     results = SqlRunner.run( sql )
@@ -52,11 +59,12 @@ class Manufacturer
     SqlRunner.run(sql)
   end
 
-  def delete()
-    sql = "DELETE FROM manufacturers
-    WHERE id = $1;"
-    values = [@id]
-    SqlRunner.run( sql, values )
+  def self.find( id )
+    sql = "SELECT * FROM manufacturers WHERE id = $1;"
+    values = [id]
+    manufacturer = SqlRunner.run( sql, values )
+    result = Manufacturer.new( manufacturer.first )
+    return result
   end
 
 
