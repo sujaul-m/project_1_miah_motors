@@ -20,6 +20,6 @@ CREATE TABLE vehicles
 CREATE TABLE miah_motors
 (
   id SERIAL8 primary key,
-  vehicles_id INT8 references vehicles(id),
+  vehicle_id INT8 references vehicles(id),
   manufacturer_id INT8 references manufacturers(id)
 );
