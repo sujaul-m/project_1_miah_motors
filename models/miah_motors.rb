@@ -26,5 +26,11 @@ class MiahMotors
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM miah_motors"
+    results = SqlRunner.run( sql )
+    return results.map { |inventory| MiahMotors.new( inventory ) }
+  end
+
 
 end
