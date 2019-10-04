@@ -11,5 +11,22 @@ class Vehicle
     @selling_price = options['selling_price']
   end
 
+  def save()
+    sql = "INSERT INTO vehicles
+    (
+      make,
+      model,
+      selling_price
+    )
+    VALUES
+    (
+      $1, $2, $3
+    )
+    RETURNING id"
+    values = [@make, @model, @selling_price]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
 
 end
