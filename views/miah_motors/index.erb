@@ -16,6 +16,7 @@
     <th>Quantity In Stock</th>
     <th>Purchase Price</th>
     <th>Selling Price</th>
+    <th>Delete Stock</th>
   </tr>
   <% for stock in @stocks %>
   <tr>
@@ -25,6 +26,7 @@
     <td><%= stock.vehicle.quantity %></td>
     <td>£<%= stock.vehicle.purchase_price %></td>
     <td>£<%= stock.vehicle.selling_price %></td>
+    <td> </td>
   </tr>
   <% end %>
 </table>
