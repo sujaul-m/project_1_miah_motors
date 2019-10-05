@@ -14,6 +14,7 @@ CREATE TABLE vehicles
   id SERIAL8 primary key,
   make VARCHAR(255) not null,
   model VARCHAR(255) not null,
+  quantity INT8 not null,
   purchase_price INT8 not null,
   selling_price INT8 not null
 );
