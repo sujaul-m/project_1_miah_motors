@@ -42,7 +42,8 @@ vehicle1 = Vehicle.new({
   "model" => "488 Pista",
   "quantity" => 5,
   "purchase_price" => 25159000,
-  "selling_price" => 26150000
+  "selling_price" => 26150000,
+  "image" => "https://spectrum.ieee.org/image/MzI1NjI1NQ.jpeg"
 })
 
 vehicle1.save()
@@ -52,7 +53,8 @@ vehicle2 = Vehicle.new({
   "model" => "Aventador SVJ",
   "quantity" => 2,
   "purchase_price" => 35000000,
-  "selling_price" => 37000000
+  "selling_price" => 37000000,
+  "image" => "https://cdn.motor1.com/images/mgl/LKMJm/s3/lamborghini-aventador-svj.jpg"
 })
 
 vehicle2.save()
@@ -62,7 +64,8 @@ vehicle3 = Vehicle.new({
   "model" => "Cullinan",
   "quantity" => 3,
   "purchase_price" => 26400000,
-  "selling_price" => 27000000
+  "selling_price" => 27000000,
+  "image" => "https://ovationmagazine.com/wp-content/uploads/2019/08/Rolls-Royce-Cullinan-Black-Badge.jpg"
 })
 
 vehicle3.save()
@@ -72,7 +75,8 @@ vehicle4 = Vehicle.new({
   "model" => "Bentayga Mulliner",
   "quantity" => 5,
   "purchase_price" => 16760000,
-  "selling_price" => 18000000
+  "selling_price" => 18000000,
+  "image" => "https://www.topgear.com/sites/default/files/styles/fit_1960x1102/public/images/news-article/carousel/2017/03/4208383fae449b08d52bf5d639d914fc/636_bentayga_mulliner_front_silverstorm_damson.jpg?itok=eAXjsNZD"
 })
 
 vehicle4.save()

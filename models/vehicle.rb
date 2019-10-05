@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Vehicle
 
-  attr_reader( :make, :model, :quantity, :purchase_price, :selling_price, :id )
+  attr_reader( :make, :model, :quantity, :purchase_price, :selling_price, :image, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -11,6 +11,7 @@ class Vehicle
     @quantity = options['quantity']
     @purchase_price = options['purchase_price']
     @selling_price = options['selling_price']
+    @image = options['image']
   end
 
   def save()
@@ -20,14 +21,15 @@ class Vehicle
       model,
       quantity,
       purchase_price,
-      selling_price
+      selling_price,
+      image
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@make, @model, @quantity, @purchase_price, @selling_price]
+    values = [@make, @model, @quantity, @purchase_price, @selling_price, @image]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -40,13 +42,14 @@ class Vehicle
       model,
       quantity,
       purchase_price,
-      selling_price
+      selling_price,
+      image
     ) =
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $6"
-    values = [@make, @model, @quantity, @purchase_price, @selling_price, @id]
+    WHERE id = $7"
+    values = [@make, @model, @quantity, @purchase_price, @selling_price, @image, @id]
     SqlRunner.run( sql, values )
   end
 

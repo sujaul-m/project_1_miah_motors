@@ -16,7 +16,8 @@ CREATE TABLE vehicles
   model VARCHAR(255) not null,
   quantity INT8 not null,
   purchase_price INT8 not null,
-  selling_price INT8 not null
+  selling_price INT8 not null,
+  image TEXT not null
 );
 
 CREATE TABLE miah_motors
