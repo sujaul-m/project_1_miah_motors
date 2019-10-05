@@ -16,16 +16,28 @@ get '/manufacturers/new' do
   erb(:"manufacturer/new")
 end
 
+
 post '/manufacturers' do
   @manufacturers = Manufacturer.new(params)
   @manufacturers.save()
   erb(:"manufacturer/create")
 end
 
+get "/manufacturers/:id/edit" do
+  @manufacturer = Manufacturer.find(params["id"])
+  erb(:"manufacturer/edit")
+end
+
 post "/manufacturers/:id/delete" do
   @manufacturer = Manufacturer.find(params["id"])
   @manufacturer.delete()
   redirect "/manufacturers"
+end
+
+post "/manufacturers/:id" do
+  @manufacturers = Manufacturer.new(params)
+  @manufacturers.update()
+  erb(:"manufacturer/update")
 end
 
 get '/manufacturers/:id' do
