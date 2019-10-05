@@ -35,8 +35,8 @@ post "/manufacturers/:id/delete" do
 end
 
 post "/manufacturers/:id" do
-  @manufacturers = Manufacturer.new(params)
-  @manufacturers.update()
+  @manufacturer = Manufacturer.new(params)
+  @manufacturer.update()
   erb(:"manufacturer/update")
 end
 

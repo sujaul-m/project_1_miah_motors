@@ -21,3 +21,14 @@ post '/vehicles' do
   @vehicles.save()
   erb(:"vehicles/create")
 end
+
+get "/vehicles/:id/edit" do
+  @vehicle = Vehicle.find(params["id"])
+  erb(:"vehicles/edit")
+end
+
+post "/vehicles/:id" do
+  @vehicle = Vehicle.new(params)
+  @vehicle.update()
+  erb(:"vehicles/update")
+end
