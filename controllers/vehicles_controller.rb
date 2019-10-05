@@ -27,8 +27,19 @@ get "/vehicles/:id/edit" do
   erb(:"vehicles/edit")
 end
 
+post "/vehicles/:id/delete" do
+  @vehicle = Vehicle.find(params["id"])
+  @vehicle.delete()
+  redirect "/vehicles"
+end
+
 post "/vehicles/:id" do
   @vehicle = Vehicle.new(params)
   @vehicle.update()
   erb(:"vehicles/update")
+end
+
+get '/vehicles/:id' do
+  @vehicle = Vehicle.find(params["id"])
+  erb( :"vehicles/show" )
 end

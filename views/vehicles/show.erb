@@ -1,0 +1,16 @@
+<nav>
+  <ul style="list-style: none;">
+    <li>
+      <h1 style="text-align:center;" ><a href="/vehicles">Go Back to Vehicles List</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<h3 style="text-align:center;"> Make: <%= @vehicle.make() %> </h3>
+<h3 style="text-align:center;"> Model: <%= @vehicle.model() %> </h3>
+<h3 style="text-align:center;"> Quantity: <%= @vehicle.quantity() %> </h3>
+<h3 style="text-align:center;"> Purchase Price: <%= @vehicle.purchase_price() %> </h3>
+<h3 style="text-align:center;"> Selling Price: <%= @vehicle.selling_price() %> </h3>
+<form style="text-align:center;" action="/vehicles/<%= @vehicle.id() %>/delete" method="post">
+  <input type="submit" value="Remove Vehicle">
+</form>
