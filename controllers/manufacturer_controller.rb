@@ -12,7 +12,7 @@ get "/manufacturers" do
 end
 
 get '/manufacturers/new' do
-  @@manufacturers = Manufacturer.all()
+  @manufacturers = Manufacturer.all()
   erb(:"manufacturer/new")
 end
 

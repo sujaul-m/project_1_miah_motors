@@ -10,3 +10,14 @@ get "/vehicles" do
   @vehicles = Vehicle.all()
   erb ( :"vehicles/index" )
 end
+
+get '/vehicles/new' do
+  @vehicles = Vehicle.all()
+  erb(:"vehicles/new")
+end
+
+post '/vehicles' do
+  @vehicles = Vehicle.new(params)
+  @vehicles.save()
+  erb(:"vehicles/create")
+end
