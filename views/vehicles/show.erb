@@ -9,6 +9,7 @@
 <img src="<%= @vehicle.image %>" alt="<%= @vehicle.model %> Image" style="float:right;width:750px;height:750px;">
 <h3 style="text-align:center;"> Make: <%= @vehicle.make() %> </h3>
 <h3 style="text-align:center;"> Model: <%= @vehicle.model() %> </h3>
+<h3 style="text-align:center;"> Stock Level to Order At: <%= vehicle.min_stock %> </h3>
 <h3 style="text-align:center;"> Quantity: <%= @vehicle.quantity() %> </h3>
 <h3 style="text-align:center;"> Purchase Price: <%= @vehicle.purchase_price() %> </h3>
 <h3 style="text-align:center;"> Selling Price: <%= @vehicle.selling_price() %> </h3>
