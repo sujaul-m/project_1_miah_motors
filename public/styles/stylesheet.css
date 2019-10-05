@@ -24,18 +24,19 @@ a:hover, a:active {
 }
 
 #inventory td, #customers th {
-  border: 1px solid #ddd;
+  border: 1px solid silver;
   padding: 8px;
+  text-align: center;
 }
 
 #inventory tr:nth-child(even){background-color: #fefbd8;}
 
-#inventory tr:hover {background-color: #ddd;}
+#inventory tr:hover {background-color: silver;}
 
 #inventory th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color: dodgerblue;
   color: white;
 }
