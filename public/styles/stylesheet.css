@@ -1,8 +1,3 @@
-body {
-  background: url('/images/cullinan.jpg');
-  background-size: 100%;
-}
-
 .center {
   margin: auto;
   padding: 170px;
@@ -19,6 +14,28 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#inventory {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#inventory td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#inventory tr:nth-child(even){background-color: #fefbd8;}
+
+#inventory tr:hover {background-color: #ddd;}
+
+#inventory th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
   background-color: dodgerblue;
   color: white;
 }

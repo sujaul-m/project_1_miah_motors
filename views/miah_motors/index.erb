@@ -1,0 +1,30 @@
+<nav>
+  <ul style="list-style: none;">
+    <li>
+      <h1 style="text-align:left;" ><a href="/">Home</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<h1 style="text-align:center;" >Inventory</h1>
+
+<table id="inventory">
+  <tr>
+    <th>Manufacturer</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Quantity In Stock</th>
+    <th>Purchase Price</th>
+    <th>Selling Price</th>
+  </tr>
+  <% for stock in @stocks %>
+  <tr>
+    <td><%= stock.manufacturer.name %></td>
+    <td><%= stock.vehicle.make %></td>
+    <td><%= stock.vehicle.model %></td>
+    <td><%= stock.vehicle.quantity %></td>
+    <td>£<%= stock.vehicle.purchase_price %></td>
+    <td>£<%= stock.vehicle.selling_price %></td>
+  </tr>
+  <% end %>
+</table>
