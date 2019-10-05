@@ -1,0 +1,53 @@
+<nav>
+  <ul style="list-style: none;">
+    <li>
+      <h1 style="text-align:center;" ><a href="/manufacturers">Go Back to Manufacturers List</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<h1 style="text-align:center;">EDIT STUDENT INFORMATION.</h1>
+
+<form style="text-align:center;" action="/students/<%= @student.id %>" method="post">
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <label for="first-name">First Name</label>
+  <input type="text" name="first_name" id="first-name">
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <label for="last-name">Last Name</label>
+  <input type="text" name="last_name" id="last-name">
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <label for="age">Age</label>
+  <input type="number" name="age" id="age">
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <label for="house-select">Select House</label>
+  <select id="house-select" name="house_id">
+    <option Selected Disabled>Select House</option>
+    <% for house in @houses %>
+    <option value=<%= house.id %>><%= house.house_name %></option>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <input type="submit" value="Update Student">
+
+</form>
