@@ -40,6 +40,7 @@ manufacturer4.save()
 vehicle1 = Vehicle.new({
   "make" => "Ferrari",
   "model" => "488 Pista",
+  "quantity" => 5,
   "purchase_price" => 25159000,
   "selling_price" => 26150000
 })
@@ -49,6 +50,7 @@ vehicle1.save()
 vehicle2 = Vehicle.new({
   "make" => "Lamborghini",
   "model" => "Aventador SVJ",
+  "quantity" => 2,
   "purchase_price" => 35000000,
   "selling_price" => 37000000
 })
@@ -58,6 +60,7 @@ vehicle2.save()
 vehicle3 = Vehicle.new({
   "make" => "Rolls-Royce",
   "model" => "Cullinan",
+  "quantity" => 3,
   "purchase_price" => 26400000,
   "selling_price" => 27000000
 })
@@ -67,6 +70,7 @@ vehicle3.save()
 vehicle4 = Vehicle.new({
   "make" => "Bentley",
   "model" => "Bentayga Mulliner",
+  "quantity" => 5,
   "purchase_price" => 16760000,
   "selling_price" => 18000000
 })
