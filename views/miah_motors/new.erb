@@ -1,0 +1,31 @@
+<nav>
+  <ul style="list-style: none;">
+    <li>
+      <h1 style="text-align:center;" ><a href="/inventory">Go Back to Inventory List</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<h1>Add to Inventory</h1>
+
+<form action="/inventory" method="post">
+  <label>
+  Select a manufacturer:
+    <select name="manufacturer_id">
+      <% for manufacturer in @manufacturers %>
+      <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a vehicle:
+    <select name="vehicle_id">
+      <% for vehicle in @vehicles %>
+      <option value="<%= vehicle.id %>"><%= vehicle.make %> <%= vehicle.model %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type='submit' value="Add">
+</form>

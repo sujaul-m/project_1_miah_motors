@@ -2,6 +2,7 @@
   <ul style="list-style: none;">
     <li>
       <h1 style="text-align:center;" ><a href="/">Home</a></h1>
+      <h1 style="text-align:center;" ><a href="/inventory/new">Add to Inventory</a></h1>
     </li>
   </ul>
 </nav>
@@ -26,7 +27,9 @@
     <td><%= stock.vehicle.quantity %></td>
     <td>£<%= stock.vehicle.purchase_price %></td>
     <td>£<%= stock.vehicle.selling_price %></td>
-    <td> </td>
+    <td> <form action="/inventory/<%= stock.id %>/delete" method="POST">
+        <input type="submit" value="delete" />
+      </form> </td>
   </tr>
   <% end %>
 </table>
