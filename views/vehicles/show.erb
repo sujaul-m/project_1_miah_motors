@@ -12,8 +12,8 @@
 <h3 style="text-align:center;"> Model: <%= @vehicle.model() %> </h3>
 <h3 style="text-align:center;"> Stock Level to Order At: <%= @vehicle.min_stock %> </h3>
 <h3 style="text-align:center;"> Quantity: <%= @vehicle.quantity() %> </h3>
-<h3 style="text-align:center;"> Purchase Price: <%= @vehicle.purchase_price() %> </h3>
-<h3 style="text-align:center;"> Selling Price: <%= @vehicle.selling_price() %> </h3>
+<h3 style="text-align:center;"> Purchase Price: £<%= @vehicle.purchase_price() %> </h3>
+<h3 style="text-align:center;"> Selling Price: £<%= @vehicle.selling_price() %> </h3>
 <br>
 <form style="text-align:center;" action="/vehicles/<%= @vehicle.id() %>/delete" method="post">
   <input type="submit" value="Remove Vehicle">
