@@ -14,11 +14,11 @@
   <br>
   <br>
 
-  <label for="manufacturer-select">Select Dealership</label>
-  <select id="manufacturer-select" name="manufacturer_id">
-    <option Selected Disabled>Select Manufacturer</option>
-    <% for manufacturer in @manufacturers %>
-    <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
+  <label for="dealership-select">Select Dealership</label>
+  <select id="dealership-select" name="dealership_id">
+    <option Selected Disabled>Select Dealership</option>
+    <% for dealership in @dealerships %>
+    <option value=<%= dealership.id %>><%= dealership.name %></option>
     <% end %>
   </select>
   <br>

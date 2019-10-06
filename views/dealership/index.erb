@@ -1,0 +1,19 @@
+<nav>
+  <ul style="list-style: none;">
+    <li>
+      <h1 style="text-align:center;" ><a href="/">Home</a></h1>
+      <h1 style="text-align:center;" ><a href="/dealerships/new">Add Dealership</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<h1 style="text-align:center;">Dealerships List</h1>
+<% for dealership in @dealerships %>
+  <br>
+  <h3 style="text-align:center;"> Name: <%= dealership.name %> </h3>
+  <h3 style="text-align:center;"> Contact Number: <%= dealership.contact %> </h3>
+  <h4 style="text-align:center;"> <a href="/dealerships/<%= dealership.id %>">Show Dealership</a> </h4>
+  <h4 style="text-align:center;"> <a href="/dealerships/<%= dealership.id %>/edit">Edit Dealership</a> </h4>
+  <br>
+  <hr>
+<% end %>

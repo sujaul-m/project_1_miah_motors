@@ -1,0 +1,13 @@
+<nav>
+  <ul style="list-style: none;">
+    <li>
+      <h1 style="text-align:center;" ><a href="/dealerships">Go Back to Dealerships List</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<h3 style="text-align:center;"> Name: <%= @dealership.name() %> </h3>
+<h3 style="text-align:center;"> Contact Number: <%= @dealership.contact() %> </h3>
+<form style="text-align:center;" action="/dealerships/<%= @dealership.id() %>/delete" method="post">
+  <input type="submit" value="Remove Dealership">
+</form>

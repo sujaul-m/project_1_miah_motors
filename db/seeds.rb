@@ -1,44 +1,44 @@
-require_relative( "../models/manufacturer.rb" )
+require_relative( "../models/dealership.rb" )
 require_relative( "../models/vehicle.rb" )
 require_relative( "../models/miah_motors.rb" )
 require("pry-byebug")
 
 MiahMotors.delete_all()
-Manufacturer.delete_all()
+Dealership.delete_all()
 Vehicle.delete_all()
 
 
 
-manufacturer1 = Manufacturer.new({
+dealership1 = Dealership.new({
   "name" => "HR Owen Ferrari",
   "contact" => "0131 629 0342"
 })
 
-manufacturer1.save()
+dealership1.save()
 
-manufacturer2 = Manufacturer.new({
+dealership2 = Dealership.new({
   "name" => "Lamborghini Ediburgh",
   "contact" => "0131 900 0491"
 })
 
-manufacturer2.save()
+dealership2.save()
 
-manufacturer3 = Manufacturer.new({
+dealership3 = Dealership.new({
   "name" => "Rolls-Royce Motors",
   "contact" => "0131 719 0843"
 })
 
-manufacturer3.save()
+dealership3.save()
 
-manufacturer4 = Manufacturer.new({
+dealership4 = Dealership.new({
   "name" => "Bentley Edinburgh",
   "contact" => "0131 991 0113"
 })
 
-manufacturer4.save()
+dealership4.save()
 
 vehicle1 = Vehicle.new({
-  "manufacturer_id" => manufacturer1.id,
+  "dealership_id" => dealership1.id,
   "make" => "Ferrari",
   "model" => "488 Pista",
   "min_stock" => 3,
@@ -51,7 +51,7 @@ vehicle1 = Vehicle.new({
 vehicle1.save()
 
 vehicle2 = Vehicle.new({
-  "manufacturer_id" => manufacturer2.id,
+  "dealership_id" => dealership2.id,
   "make" => "Lamborghini",
   "model" => "Aventador SVJ",
   "min_stock" => 1,
@@ -64,7 +64,7 @@ vehicle2 = Vehicle.new({
 vehicle2.save()
 
 vehicle3 = Vehicle.new({
-  "manufacturer_id" => manufacturer3.id,
+  "dealership_id" => dealership3.id,
   "make" => "Rolls-Royce",
   "model" => "Cullinan",
   "min_stock" => 3,
@@ -77,7 +77,7 @@ vehicle3 = Vehicle.new({
 vehicle3.save()
 
 vehicle4 = Vehicle.new({
-  "manufacturer_id" => manufacturer4.id,
+  "dealership_id" => dealership4.id,
   "make" => "Bentley",
   "model" => "Bentayga Mulliner",
   "min_stock" => 3,

@@ -2,7 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/miah_motors.rb' )
-require_relative( '../models/manufacturer.rb' )
+require_relative( '../models/dealership.rb' )
 require_relative( '../models/vehicle.rb' )
 also_reload( '../models/*' )
 
@@ -13,7 +13,7 @@ end
 
 get '/vehicles/new' do
   @vehicles = Vehicle.all()
-  @manufacturers = Manufacturer.all()
+  @dealerships = Dealership.all()
   erb(:"vehicles/new")
 end
 
@@ -25,7 +25,7 @@ end
 
 get "/vehicles/:id/edit" do
   @vehicle = Vehicle.find(params["id"])
-  @manufacturers = Manufacturer.all()
+  @dealerships = Dealership.all()
   erb(:"vehicles/edit")
 end
 

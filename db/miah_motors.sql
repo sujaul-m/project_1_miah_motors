@@ -1,8 +1,8 @@
 DROP TABLE miah_motors;
 DROP TABLE vehicles;
-DROP TABLE manufacturers;
+DROP TABLE dealerships;
 
-CREATE TABLE manufacturers
+CREATE TABLE dealerships
 (
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
@@ -12,7 +12,7 @@ CREATE TABLE manufacturers
 CREATE TABLE vehicles
 (
   id SERIAL8 primary key,
-  manufacturer_id INT8 references manufacturers(id),
+  dealership_id INT8 references dealerships(id),
   make VARCHAR(255) not null,
   model VARCHAR(255) not null,
   min_stock INT8 not null,

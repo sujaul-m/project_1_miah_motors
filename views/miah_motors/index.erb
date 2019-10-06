@@ -12,7 +12,7 @@
 
 <table id="inventory">
   <tr>
-    <th>Manufacturer</th>
+    <th>Dealership</th>
     <th>Make</th>
     <th>Model</th>
     <th>Minimum Stock Level</th>
@@ -23,7 +23,7 @@
   </tr>
   <% for stock in @stocks %>
   <tr>
-    <td><%= stock.vehicle.get_manufacturer_name %></td>
+    <td><%= stock.vehicle.get_dealership_name %></td>
     <td><%= stock.vehicle.make %></td>
     <td><%= stock.vehicle.model %></td>
     <td><%= stock.vehicle.min_stock %></td>

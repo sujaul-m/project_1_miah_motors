@@ -2,11 +2,11 @@ require_relative( '../db/sql_runner' )
 
 class Vehicle
 
-  attr_reader( :manufacturer_id, :make, :model, :min_stock, :quantity, :purchase_price, :selling_price, :image, :id )
+  attr_reader( :dealership_id, :make, :model, :min_stock, :quantity, :purchase_price, :selling_price, :image, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @manufacturer_id = options['manufacturer_id'].to_i
+    @dealership_id = options['dealership_id'].to_i
     @make = options['make']
     @model = options['model']
     @min_stock = options['min_stock']
@@ -19,7 +19,7 @@ class Vehicle
   def save()
     sql = "INSERT INTO vehicles
     (
-      manufacturer_id,
+      dealership_id,
       make,
       model,
       min_stock,
@@ -33,7 +33,7 @@ class Vehicle
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id"
-    values = [@manufacturer_id, @make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image]
+    values = [@dealership_id, @make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -42,7 +42,7 @@ class Vehicle
     sql = "UPDATE vehicles
     SET
     (
-      manufacturer_id,
+      dealership_id,
       make,
       model,
       min_stock,
@@ -55,7 +55,7 @@ class Vehicle
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     WHERE id = $9"
-    values = [@manufacturer_id, @make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image, @id]
+    values = [@dealership_id, @make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -66,8 +66,8 @@ class Vehicle
     SqlRunner.run( sql, values )
   end
 
-  def manufacturers
-    sql = "SELECT manufacturer.* FROM manufacturers manufacturer INNER JOIN miah_motors m ON m.manufacturer_id = m.id WHERE m.vehicle_id = $1"
+  def dealerships
+    sql = "SELECT dealership.* FROM dealerships dealership INNER JOIN miah_motors m ON m.dealership_id = m.id WHERE m.vehicle_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |vehicle| Vehicle.new(vehicle) }
@@ -92,9 +92,9 @@ class Vehicle
     return result
   end
 
-  def get_manufacturer_name
-    sql = "SELECT name FROM manufacturers WHERE id = $1"
-    values = [@manufacturer_id]
+  def get_dealership_name
+    sql = "SELECT name FROM dealerships WHERE id = $1"
+    values = [@dealership_id]
     manufacturer = SqlRunner.run( sql, values )[0]["name"]
     return manufacturer
   end

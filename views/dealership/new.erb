@@ -1,18 +1,19 @@
 <nav>
   <ul style="list-style: none;">
     <li>
-      <h1 style="text-align:center;" ><a href="/manufacturers">Go Back to Manufacturers List</a></h1>
+      <h1 style="text-align:center;" ><a href="/dealerships">Go Back to Dealerships List</a></h1>
     </li>
   </ul>
 </nav>
 
-<h1 style="text-align:center;">UPDATE MANUFACTURER INFORMATION.</h1>
+<h1 style="text-align:center;">FORM TO ADD NEW DEALERSHIP</h1>
 
-<form style="text-align:center;" action="/manufacturers/<%= @manufacturer.id %>" method="post">
+<form style="text-align:center;" action="/dealerships" method="post">
   <br>
   <br>
   <br>
   <br>
+
   <label for="name">Name</label>
   <input type="text" name="name" id="name">
   <br>
@@ -27,6 +28,6 @@
   <br>
   <br>
 
-  <input type="submit" value="Update Manufacturer">
+  <input type="submit" value="Add Dealership">
 
 </form>
