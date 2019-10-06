@@ -20,6 +20,9 @@
 <hr>
 <br>
 <form style="text-align:center;" action="/vehicles/<%= @vehicle.id %>" method="post">
+  <font size="5" color="red">PLEASE SELECT DEALERSHIP</font>
+  <br>
+  <br>
   <label for="dealership-select">Select Dealership</label>
   <select id="dealership-select" name="dealership_id">
     <option Selected Disabled>Select Dealership</option>
@@ -31,41 +34,41 @@
   <br>
 
   <label for="make">Make</label>
-  <input type="text" name="make" id="make">
+  <input type="text" name="make" id="make" value="<%= @vehicle.make() %>">
   <br>
   <br>
 
   <label for="model">Model</label>
-  <input type="text" name="model" id="model">
+  <input type="text" name="model" id="model" value="<%= @vehicle.model() %>">
   <br>
   <br>
 
 
   <label for="min-stock">Minimum Stock Level to Order At</label>
-  <input type="text" name="min_stock" id="min-stock">
+  <input type="text" name="min_stock" id="min-stock" value="<%= @vehicle.min_stock %>">
   <br>
   <br>
 
   <label for="quantity">Quantity</label>
-  <input type="text" name="quantity" id="quantity">
+  <input type="text" name="quantity" id="quantity" value="<%= @vehicle.quantity() %>">
   <br>
   <br>
 
 
   <label for="purchase-price">Purchase Price</label>
-  <input type="text" name="purchase_price" id="purchase-price">
+  <input type="text" name="purchase_price" id="purchase-price" value="<%= @vehicle.purchase_price() %>">
   <br>
   <br>
 
 
   <label for="selling-price">Selling Price</label>
-  <input type="text" name="selling_price" id="selling-price">
+  <input type="text" name="selling_price" id="selling-price" value="<%= @vehicle.selling_price() %>">
   <br>
   <br>
 
 
   <label for="image">Image Link</label>
-  <input type="text" name="image" id="image">
+  <input type="text" name="image" id="image" value="<%= @vehicle.image %>">
   <br>
   <br>
 
