@@ -23,7 +23,7 @@ a:hover, a:active {
   width: 100%;
 }
 
-#inventory td, #customers th {
+#inventory td, th {
   border: 1px solid silver;
   padding: 8px;
   text-align: center;
@@ -38,5 +38,28 @@ a:hover, a:active {
   padding-bottom: 12px;
   text-align: center;
   background-color: dodgerblue;
+  color: white;
+}
+
+#inventory_low {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#inventory_low td, th {
+  border: 1px solid silver;
+  padding: 8px;
+  text-align: center;
+  background-color: #ff9999;
+  font-weight: bold;
+}
+
+#inventory_low tr:hover {background-color: silver;}
+
+#inventory_low th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: 	dodgerblue;
   color: white;
 }
