@@ -15,12 +15,12 @@
 <br>
 <form style="text-align:center;" action="/dealerships/<%= @dealership.id %>" method="post">
   <label for="name">Name</label>
-  <input type="text" name="name" id="name">
+  <input type="text" name="name" id="name" value="<%= @dealership.name() %>">
   <br>
   <br>
 
   <label for="contact">Contact Number</label>
-  <input type="text" name="contact" id="contact">
+  <input type="text" name="contact" id="contact" value="<%= @dealership.contact() %>">
   <br>
   <br>
 
