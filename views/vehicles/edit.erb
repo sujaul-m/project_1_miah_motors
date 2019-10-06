@@ -17,7 +17,8 @@
 <p style="text-align:center;"> Purchase Price: <%= @vehicle.purchase_price() %> </p>
 <p style="text-align:center;"> Selling Price: <%= @vehicle.selling_price() %> </p>
 <br>
-
+<hr>
+<br>
 <form style="text-align:center;" action="/vehicles/<%= @vehicle.id %>" method="post">
   <label for="dealership-select">Select Dealership</label>
   <select id="dealership-select" name="dealership_id">
