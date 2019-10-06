@@ -99,11 +99,4 @@ class Vehicle
     return dealership
   end
 
-  # def order_stock(min_stock, quantity)
-  #   sql = "select vehicles.* from vehicles where (min_stock = $1) > (quantity = $2);"
-  #   values = [min_stock, quantity]
-  #   results = SqlRunner.run( sql, values )
-  #   return results.map { |vehicle| Vehicle.new( vehicle ) }
-  # end
-
 end
