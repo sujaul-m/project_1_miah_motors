@@ -95,8 +95,8 @@ class Vehicle
   def get_dealership_name
     sql = "SELECT name FROM dealerships WHERE id = $1"
     values = [@dealership_id]
-    manufacturer = SqlRunner.run( sql, values )[0]["name"]
-    return manufacturer
+    dealership = SqlRunner.run( sql, values )[0]["name"]
+    return dealership
   end
 
   # def order_stock(min_stock, quantity)

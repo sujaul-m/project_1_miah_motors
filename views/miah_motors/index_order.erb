@@ -16,6 +16,7 @@
     <th>Minimum Stock Level</th>
     <th>Quantity In Stock</th>
     <th>Purchase Price</th>
+    <th>Low Stock/Out of Stock</th>
   </tr>
   <% for stock in @stocks %>
     <% if stock.vehicle.min_stock > stock.vehicle.quantity %>
@@ -25,7 +26,14 @@
     <td><%= stock.vehicle.model %></td>
     <td><%= stock.vehicle.min_stock %></td>
     <td><%= stock.vehicle.quantity %></td>
-    <td>£<%= stock.vehicle.purchase_price %></td>
+    <td><%= stock.vehicle.purchase_price %></td>
+    <td>
+      <% if stock.vehicle.quantity > "0"%>
+        Low Stock
+      <% else %>
+        Out of Stock
+      <% end %>
+    </td>
   </tr>
     <% end %>
   <% end %>
