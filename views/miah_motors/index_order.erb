@@ -1,9 +1,7 @@
 <nav>
   <ul style="list-style: none;">
     <li>
-      <h1 style="text-align:center;" ><a href="/">Home</a></h1>
-      <h1 style="text-align:center;" ><a href="/inventory/new">Add to Inventory</a></h1>
-      <h1 style="text-align:center;" ><a href="/inventory/order">Show Vehicles in Need of Ordering</a></h1>
+      <h1 style="text-align:center;" ><a href="/inventory">Back to Inventory</a></h1>
     </li>
   </ul>
 </nav>
@@ -22,6 +20,7 @@
     <th>Delete Stock</th>
   </tr>
   <% for stock in @stocks %>
+    <% if stock.vehicle.min_stock > stock.vehicle.quantity %>
   <tr>
     <td><%= stock.vehicle.get_dealership_name %></td>
     <td><%= stock.vehicle.make %></td>
@@ -36,5 +35,6 @@
       </form>
     </td>
   </tr>
+    <% end %>
   <% end %>
 </table>
