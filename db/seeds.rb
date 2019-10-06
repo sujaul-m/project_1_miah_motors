@@ -38,6 +38,7 @@ manufacturer4 = Manufacturer.new({
 manufacturer4.save()
 
 vehicle1 = Vehicle.new({
+  "manufacturer_id" => manufacturer1.id,
   "make" => "Ferrari",
   "model" => "488 Pista",
   "min_stock" => 3,
@@ -50,6 +51,7 @@ vehicle1 = Vehicle.new({
 vehicle1.save()
 
 vehicle2 = Vehicle.new({
+  "manufacturer_id" => manufacturer2.id,
   "make" => "Lamborghini",
   "model" => "Aventador SVJ",
   "min_stock" => 1,
@@ -62,6 +64,7 @@ vehicle2 = Vehicle.new({
 vehicle2.save()
 
 vehicle3 = Vehicle.new({
+  "manufacturer_id" => manufacturer3.id,
   "make" => "Rolls-Royce",
   "model" => "Cullinan",
   "min_stock" => 3,
@@ -74,6 +77,7 @@ vehicle3 = Vehicle.new({
 vehicle3.save()
 
 vehicle4 = Vehicle.new({
+  "manufacturer_id" => manufacturer4.id,
   "make" => "Bentley",
   "model" => "Bentayga Mulliner",
   "min_stock" => 3,
@@ -87,29 +91,25 @@ vehicle4.save()
 
 
 showroom1 = MiahMotors.new({
-  "vehicle_id" => vehicle1.id,
-  "manufacturer_id" => manufacturer1.id
+  "vehicle_id" => vehicle1.id
 })
 
 showroom1.save()
 
 showroom2 = MiahMotors.new({
-  "vehicle_id" => vehicle2.id,
-  "manufacturer_id" => manufacturer2.id
+  "vehicle_id" => vehicle2.id
 })
 
 showroom2.save()
 
 showroom3 = MiahMotors.new({
-  "vehicle_id" => vehicle3.id,
-  "manufacturer_id" => manufacturer3.id
+  "vehicle_id" => vehicle3.id
 })
 
 showroom3.save()
 
 showroom4 = MiahMotors.new({
-  "vehicle_id" => vehicle4.id,
-  "manufacturer_id" => manufacturer4.id
+  "vehicle_id" => vehicle4.id
 })
 
 showroom4.save()

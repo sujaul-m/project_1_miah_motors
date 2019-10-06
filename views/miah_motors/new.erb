@@ -10,19 +10,10 @@
 
 <form action="/inventory" method="post">
   <label>
-  Select a manufacturer:
-    <select name="manufacturer_id">
-      <% for manufacturer in @manufacturers %>
-      <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
-      <% end %>
-    </select>
-  </label>
-
-  <label>
-    Select a vehicle:
+    Select Vehicle to Add to Inventory:
     <select name="vehicle_id">
       <% for vehicle in @vehicles %>
-      <option value="<%= vehicle.id %>"><%= vehicle.make %> <%= vehicle.model %></option>
+      <option value="<%= vehicle.id %>"> <%= vehicle.get_manufacturer_name %> <%= vehicle.make %> <%= vehicle.model %></option>
       <% end %>
     </select>
   </label>

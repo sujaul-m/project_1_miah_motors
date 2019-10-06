@@ -12,6 +12,7 @@
   <br>
   <img src="<%= vehicle.image %>" alt="<%= vehicle.model %> Image" style="float:right;width:300px;height:300px;">
   <img src="<%= vehicle.image %>" alt="<%= vehicle.model %> Image" style="float:left;width:300px;height:300px;">
+  <h3 style="text-align:center;"> Dealership Bought From: <%= vehicle.get_manufacturer_name() %> </h3>
   <h3 style="text-align:center;"> Make: <%= vehicle.make %> </h3>
   <h3 style="text-align:center;"> Model: <%= vehicle.model %> </h3>
   <h3 style="text-align:center;"> Stock Level to Order At: <%= vehicle.min_stock %> </h3>

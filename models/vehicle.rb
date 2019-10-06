@@ -2,10 +2,11 @@ require_relative( '../db/sql_runner' )
 
 class Vehicle
 
-  attr_reader( :make, :model, :min_stock, :quantity, :purchase_price, :selling_price, :image, :id )
+  attr_reader( :manufacturer_id, :make, :model, :min_stock, :quantity, :purchase_price, :selling_price, :image, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
+    @manufacturer_id = options['manufacturer_id'].to_i
     @make = options['make']
     @model = options['model']
     @min_stock = options['min_stock']
@@ -18,6 +19,7 @@ class Vehicle
   def save()
     sql = "INSERT INTO vehicles
     (
+      manufacturer_id,
       make,
       model,
       min_stock,
@@ -28,10 +30,10 @@ class Vehicle
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6, $7
+      $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id"
-    values = [@make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image]
+    values = [@manufacturer_id, @make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -40,6 +42,7 @@ class Vehicle
     sql = "UPDATE vehicles
     SET
     (
+      manufacturer_id,
       make,
       model,
       min_stock,
@@ -49,10 +52,10 @@ class Vehicle
       image
     ) =
     (
-      $1, $2, $3, $4, $5, $6, $7
+      $1, $2, $3, $4, $5, $6, $7, $8
     )
-    WHERE id = $8"
-    values = [@make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image, @id]
+    WHERE id = $9"
+    values = [@manufacturer_id, @make, @model, @min_stock, @quantity, @purchase_price, @selling_price, @image, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -87,6 +90,13 @@ class Vehicle
     vehicle = SqlRunner.run( sql, values )
     result = Vehicle.new( vehicle.first )
     return result
+  end
+
+  def get_manufacturer_name
+    sql = "SELECT name FROM manufacturers WHERE id = $1"
+    values = [@manufacturer_id]
+    manufacturer = SqlRunner.run( sql, values )[0]["name"]
+    return manufacturer
   end
 
   # def order_stock(min_stock, quantity)

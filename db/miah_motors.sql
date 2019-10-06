@@ -12,6 +12,7 @@ CREATE TABLE manufacturers
 CREATE TABLE vehicles
 (
   id SERIAL8 primary key,
+  manufacturer_id INT8 references manufacturers(id),
   make VARCHAR(255) not null,
   model VARCHAR(255) not null,
   min_stock INT8 not null,
@@ -24,6 +25,5 @@ CREATE TABLE vehicles
 CREATE TABLE miah_motors
 (
   id SERIAL8 primary key,
-  vehicle_id INT8 references vehicles(id),
-  manufacturer_id INT8 references manufacturers(id)
+  vehicle_id INT8 references vehicles(id)
 );

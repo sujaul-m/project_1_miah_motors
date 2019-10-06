@@ -14,6 +14,18 @@
   <br>
   <br>
 
+  <label for="manufacturer-select">Select Dealership</label>
+  <select id="manufacturer-select" name="manufacturer_id">
+    <option Selected Disabled>Select Manufacturer</option>
+    <% for manufacturer in @manufacturers %>
+    <option value=<%= manufacturer.id %>><%= manufacturer.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <br>
+  <br>
+
   <label for="make">Make</label>
   <input type="text" name="make" id="make">
   <br>

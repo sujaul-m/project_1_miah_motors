@@ -13,6 +13,7 @@ end
 
 get '/vehicles/new' do
   @vehicles = Vehicle.all()
+  @manufacturers = Manufacturer.all()
   erb(:"vehicles/new")
 end
 
@@ -24,6 +25,7 @@ end
 
 get "/vehicles/:id/edit" do
   @vehicle = Vehicle.find(params["id"])
+  @manufacturers = Manufacturer.all()
   erb(:"vehicles/edit")
 end
 
