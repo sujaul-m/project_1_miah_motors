@@ -19,7 +19,7 @@
     <th>Low Stock/Out of Stock</th>
   </tr>
   <% for stock in @stocks %>
-    <% if stock.vehicle.min_stock > stock.vehicle.quantity %>
+    <% if stock.vehicle.min_stock >= stock.vehicle.quantity %>
   <tr>
     <td><%= stock.vehicle.get_dealership_name %></td>
     <td><%= stock.vehicle.make %></td>
