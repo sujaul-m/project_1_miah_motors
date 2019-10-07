@@ -18,7 +18,9 @@
     <th>Minimum Stock Level</th>
     <th>Quantity In Stock</th>
     <th>Purchase Price</th>
+    <th>Mark Up</th>
     <th>Selling Price</th>
+    <th>Stock Value</th>
     <th>Delete Stock</th>
   </tr>
   <% for stock in @stocks %>
@@ -29,7 +31,9 @@
     <td><%= stock.vehicle.min_stock %></td>
     <td><%= stock.vehicle.quantity %></td>
     <td>£<%= stock.vehicle.purchase_price %></td>
+    <td>£<%= stock.vehicle.mark_up %></td>
     <td>£<%= stock.vehicle.selling_price %></td>
+    <td>£<%= stock.vehicle.stock_value %></td>
     <td>
       <form action="/inventory/<%= stock.id %>/delete" method="POST">
         <input type="submit" value="delete" />
