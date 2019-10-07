@@ -66,6 +66,18 @@ class Vehicle
     SqlRunner.run( sql, values )
   end
 
+  def purchase()
+    sql = "UPDATE vehicles SET quantity = quantity + 1 WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
+  def sold()
+    sql = "UPDATE vehicles SET quantity = quantity - 1 WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
   def dealerships
     sql = "SELECT dealership.* FROM dealerships dealership INNER JOIN miah_motors m ON m.dealership_id = m.id WHERE m.vehicle_id = $1"
     values = [@id]
