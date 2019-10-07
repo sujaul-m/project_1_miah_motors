@@ -104,4 +104,11 @@ class Vehicle
     return dealership
   end
 
+  def mark_up
+    sql = "select selling_price-purchase_price as mark_up from vehicles WHERE id = $1"
+    values = [@id]
+    markup = SqlRunner.run(sql, values)[0]["mark_up"]
+    return markup
+  end
+
 end

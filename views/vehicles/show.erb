@@ -14,6 +14,7 @@
 <h3 style="text-align:center;"> Quantity: <%= @vehicle.quantity() %> </h3>
 <h3 style="text-align:center;"> Purchase Price: £<%= @vehicle.purchase_price() %> </h3>
 <h3 style="text-align:center;"> Selling Price: £<%= @vehicle.selling_price() %> </h3>
+<h3 style="text-align:center;"> Mark Up: £<%= @vehicle.mark_up() %> </h3>
 <br>
 <form style="text-align:center;" action="/vehicles/<%= @vehicle.id() %>/purchase" method="post">
   <input type="submit" value="Purchase One More">
