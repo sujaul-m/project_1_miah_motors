@@ -38,14 +38,6 @@ class MiahMotors
     return Vehicle.new( results.first )
   end
 
-  def dealership()
-    sql = "SELECT * FROM dealerships
-    WHERE id = $1"
-    values = [@dealership_id]
-    results = SqlRunner.run( sql, values )
-    return Manufacturer.new( results.first )
-  end
-
   def self.delete_all()
     sql = "DELETE FROM miah_motors"
     SqlRunner.run( sql )

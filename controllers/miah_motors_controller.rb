@@ -22,11 +22,6 @@ get "/inventory/order" do
   erb ( :"miah_motors/index_order" )
 end
 
-# get '/inventory/stock' do
-#   vehicles = Vehicle.all()
-#   @stocks.order_stock(vehicles)
-#   erb(:"miah_motors/stock")
-# end
 
 post '/inventory' do
   inventory = MiahMotors.new(params)

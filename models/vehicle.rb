@@ -78,13 +78,6 @@ class Vehicle
     SqlRunner.run( sql, values )
   end
 
-  def dealerships
-    sql = "SELECT dealership.* FROM dealerships dealership INNER JOIN miah_motors m ON m.dealership_id = m.id WHERE m.vehicle_id = $1"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map { |vehicle| Vehicle.new(vehicle) }
-  end
-
   def self.all()
     sql = "SELECT * FROM vehicles;"
     results = SqlRunner.run( sql )
