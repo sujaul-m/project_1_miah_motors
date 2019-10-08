@@ -35,7 +35,7 @@
     <td>£<%= stock.vehicle.mark_up %></td>
     <td>£<%= stock.vehicle.selling_price %></td>
     <td>£<%= stock.vehicle.stock_value %></td>
-    <td id="count">
+    <td class="count">
       <% if stock.vehicle.min_stock >= stock.vehicle.quantity%>
         <% if stock.vehicle.quantity > "0"%>
           LOW

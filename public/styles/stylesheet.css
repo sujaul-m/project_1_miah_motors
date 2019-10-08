@@ -1,3 +1,6 @@
+body{
+  background-color: #E3F3FE;
+}
 .center {
   margin: auto;
   padding: 170px;
@@ -31,6 +34,8 @@ td, th {
 
 tr:nth-child(even){background-color: #fefbd8;}
 
+tr:nth-child(odd){background-color: white;}
+
 tr:hover {background-color: silver;}
 
 th {
@@ -41,7 +46,7 @@ th {
   color: white;
 }
 
-#count tr:hover {background-color: red;}
+.count td {color: red;}
 
 /* #inventory_low {
   border-collapse: collapse;
