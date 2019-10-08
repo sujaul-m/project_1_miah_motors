@@ -36,7 +36,7 @@ tr:nth-child(even){background-color: #fefbd8;}
 
 tr:nth-child(odd){background-color: white;}
 
-tr:hover {background-color: silver;}
+tr:hover {background-color: salmon;}
 
 th {
   padding-top: 12px;
