@@ -29,8 +29,7 @@ get "/dealerships/:id/edit" do
 end
 
 post "/dealerships/:id/delete" do
-  @dealership = Dealership.find(params["id"])
-  @dealership.delete()
+  Dealership.delete(params[:id])
   redirect "/dealerships"
 end
 

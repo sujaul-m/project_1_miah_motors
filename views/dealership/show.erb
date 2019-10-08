@@ -5,9 +5,8 @@
     </li>
   </ul>
 </nav>
+<br>
+<br>
 
 <h3 style="text-align:center;"> Name: <%= @dealership.name() %> </h3>
 <h3 style="text-align:center;"> Contact Number: <%= @dealership.contact() %> </h3>
-<form style="text-align:center;" action="/dealerships/<%= @dealership.id() %>/delete" method="post">
-  <input type="submit" value="Remove Dealership">
-</form>

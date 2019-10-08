@@ -7,13 +7,37 @@
   </ul>
 </nav>
 
+<br>
 <h1 style="text-align:center;">Dealerships List</h1>
-<% for dealership in @dealerships %>
-  <br>
-  <h3 style="text-align:center;"> Name: <%= dealership.name %> </h3>
-  <h3 style="text-align:center;"> Contact Number: <%= dealership.contact %> </h3>
-  <h4 style="text-align:center;"> <a href="/dealerships/<%= dealership.id %>">Show Dealership</a> </h4>
-  <h4 style="text-align:center;"> <a href="/dealerships/<%= dealership.id %>/edit">Edit Dealership</a> </h4>
-  <br>
-  <hr>
-<% end %>
+<br>
+
+<table>
+  <tr>
+    <th>Dealership Name</th>
+    <th>Contact Number:</th>
+    <th>Show Details</th>
+    <th>Edit Details</th>
+    <th>Delete Details</th>
+  </tr>
+  <% for dealership in @dealerships %>
+  <tr>
+    <td><%= dealership.name %></td>
+    <td><%= dealership.contact %></td>
+    <td>
+      <form action="/dealerships/<%= dealership.id %>" method="get">
+        <input type="submit" value="SHOW" />
+      </form>
+    </td>
+    <td>
+      <form action="/dealerships/<%= dealership.id %>/edit" method="get">
+        <input type="submit" value="EDIT" />
+      </form>
+    </td>
+    <td>
+      <form style="text-align:center;" action="/dealerships/<%= dealership.id() %>/delete" method="post">
+        <input type="submit" value="DELETE">
+      </form>
+    </td>
+  </tr>
+  <% end %>
+</table>
