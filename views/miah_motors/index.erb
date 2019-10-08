@@ -3,7 +3,7 @@
     <li>
       <h1 style="text-align:center;" ><a href="/">Home</a></h1>
       <h1 style="text-align:center;" ><a href="/inventory/new">Add to Inventory</a></h1>
-      <h1 style="text-align:center;" ><a href="/inventory/order">Show Vehicles in Need of Ordering</a></h1>
+      <!-- <h1 style="text-align:center;" ><a href="/inventory/order">Show Vehicles in Need of Ordering</a></h1> -->
     </li>
   </ul>
 </nav>
@@ -21,6 +21,7 @@
     <th>Mark Up</th>
     <th>Selling Price</th>
     <th>Stock Value</th>
+    <th>Low Stock/Out of Stock</th>
     <th>Delete Stock</th>
   </tr>
   <% for stock in @stocks %>
@@ -34,6 +35,15 @@
     <td>£<%= stock.vehicle.mark_up %></td>
     <td>£<%= stock.vehicle.selling_price %></td>
     <td>£<%= stock.vehicle.stock_value %></td>
+    <td id="stock">
+      <% if stock.vehicle.min_stock >= stock.vehicle.quantity%>
+        <% if stock.vehicle.quantity > "0"%>
+          LOW
+        <% else %>
+          OUT
+        <% end %>
+      <% end %>
+    </td>
     <td>
       <form action="/inventory/<%= stock.id %>/delete" method="POST">
         <input type="submit" value="delete" />
