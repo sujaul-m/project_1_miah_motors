@@ -10,8 +10,7 @@
 <h1 style="text-align:center;">Vehicles Stock</h1>
 <% for vehicle in @vehicles %>
   <br>
-  <img src="<%= vehicle.image %>" alt="<%= vehicle.model %> Image" style="float:right;width:700px;height:425px;">
-  <img src="<%= vehicle.image %>" alt="<%= vehicle.model %> Image" style="float:left;width:700px;height:425px;">
+  <img src="<%= vehicle.image %>" alt="<%= vehicle.model %> Image" style="float:right;width:750px;height:500px;">
   <h3 style="text-align:center;"> Dealership Bought From: <br><%= vehicle.get_dealership_name() %> </h3>
   <h3 style="text-align:center;"> Make: <%= vehicle.make %> </h3>
   <h3 style="text-align:center;"> Model: <%= vehicle.model %> </h3>
