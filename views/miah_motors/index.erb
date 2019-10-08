@@ -10,7 +10,7 @@
 
 <h1 style="text-align:center;" >Inventory</h1>
 
-<table id="inventory">
+<table>
   <tr>
     <th>Dealership</th>
     <th>Make</th>
@@ -35,7 +35,7 @@
     <td>£<%= stock.vehicle.mark_up %></td>
     <td>£<%= stock.vehicle.selling_price %></td>
     <td>£<%= stock.vehicle.stock_value %></td>
-    <td id="stock">
+    <td id="count">
       <% if stock.vehicle.min_stock >= stock.vehicle.quantity%>
         <% if stock.vehicle.quantity > "0"%>
           LOW

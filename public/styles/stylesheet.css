@@ -18,28 +18,30 @@ a:hover, a:active {
   color: white;
 }
 
-#inventory {
+table {
   border-collapse: collapse;
   width: 100%;
 }
 
-#inventory td, th {
+td, th {
   border: 1px solid silver;
   padding: 8px;
   text-align: center;
 }
 
-#inventory tr:nth-child(even){background-color: #fefbd8;}
+tr:nth-child(even){background-color: #fefbd8;}
 
-#inventory tr:hover {background-color: silver;}
+tr:hover {background-color: silver;}
 
-#inventory th {
+th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
   background-color: dodgerblue;
   color: white;
 }
+
+#count tr:hover {background-color: red;}
 
 /* #inventory_low {
   border-collapse: collapse;
